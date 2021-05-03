@@ -7,6 +7,14 @@ class ProductTag extends Model {}
 ProductTag.init(
   {
     // define columns
+    // id from product
+    // join needed?
+    product_id: {
+      type: DataTypes.INTEGER
+    },
+    tag_id: {
+      type: DataTypes.INTEGER
+    }
   },
   {
     sequelize,
