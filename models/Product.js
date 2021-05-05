@@ -11,18 +11,32 @@ Product.init(
   {
     // define columns
     product_name: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     price: {
-      type: DataTypes.DECIMAL
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      validate: {
+        isDecimal: true
+      }
+
     },
     stock: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        isNumeric: true
+      }
     },
     // ID from category
     // join needed?
     category_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id'
+      }
     }
   },
   {

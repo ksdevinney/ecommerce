@@ -9,11 +9,24 @@ ProductTag.init(
     // define columns
     // id from product
     // join needed?
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true
+    },
     product_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true
     },
     tag_id: {
-      type: DataTypes.INTEGER
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'tag',
+        key: 'id'
+      }
     }
   },
   {
