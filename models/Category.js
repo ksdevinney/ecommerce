@@ -8,6 +8,12 @@ Category.init(
   {
     // define columns
     // id is already created through sequelize?
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true
+    },
     title: {
       type: DataTypes.STRING,
       allowNul: false
