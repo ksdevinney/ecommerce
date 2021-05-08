@@ -51,6 +51,7 @@ router.get('/:id', (req, res) => {
   });
 
 // create new product
+// error in insomnia but posts to db
 router.post('/', (req, res) => {
   /* req.body should look like this...
     {
@@ -83,6 +84,7 @@ router.post('/', (req, res) => {
 });
 
 // update product
+// error in insomnia but db updates
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {

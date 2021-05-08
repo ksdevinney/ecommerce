@@ -3,6 +3,8 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 // The `/api/tags` endpoint
 
+// all tag routes work!
+
 router.get('/', (req, res) => {
   // find all tags
   // be sure to include its associated Product data
@@ -21,6 +23,7 @@ router.get('/', (req, res) => {
     }
   });
 
+// works
 router.get('/:id', (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
@@ -49,7 +52,11 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
-  Tag.update({
+  Tag.update(
+    {
+      tag_name: req.body.tag_name
+    },
+    {
     where: {
       id: req.params.id
     }
